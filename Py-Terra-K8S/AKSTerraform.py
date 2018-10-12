@@ -9,8 +9,6 @@ import sys
 
 class AKSTerraform():
     def __init__(self, source_manifest_path, storage_account, storage_container, variables=None):
-
-
         self.name = os.path.basename(source_manifest_path).split(".")[0]
         # print("Manifest name:" + self.name)
         self.object_id = str(uuid.uuid4())
@@ -31,9 +29,9 @@ class AKSTerraform():
         print("Variables: ",variables)
         self.generate_vars_file()
         init(self)
-        # plan(self)
-        # apply(self)
-
+        plan(self)
+        apply(self)
+        self.remove_tmp_manifest()
 
     def cleanup(self):
         self.remove_tmp_manifest()

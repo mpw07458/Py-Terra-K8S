@@ -24,12 +24,18 @@ STORAGE_ACCOUNT_NAME = Haikunator().haikunate(delimiter='')
 variables = {
     "client_id": "6484bac5-b63d-4385-bf53-44ee8144ea83",
     "client_secret": "a030758c-ca55-44f8-9585-412fddbf0196",
-    "agent_count": 3,
+    "agent_count": 4,
     "ssh_public_key": "~/.ssh/id_rsa.pub",
-    "dns_prefix": "tfk8stest",
-    "cluster_name": "tfk8stest",
-    "resource_group_name": "tfs-rg",
-    "location": "East US"
+    "dns_prefix": "tmpwtest",
+    "cluster_name": "tfmpwtest",
+    "resource_group_name": "tfmpw-rg",
+    "location": "East US",
+    "nsg_name": "tfmpw-nsg",
+    "vnet_name": "tfmpw-vnet",
+    "subnet_name": "tfmpw-subnet",
+    "admin_user_name": "tfmpw",
+    "vnet_address": "10.1.0.0/16",
+    "subnet_prefix": "10.1.0.0/24",
 }
 
 
@@ -232,9 +238,9 @@ def test_create_AKS_Cluster():
     aks_tf = AKSTerraform('/Users/michaelwilliams/Documents/GitHub/Py-Terra-K8S/Py-Terra-K8S/Terraform',
                           'cloudshellstoragempw', 'mpwcontainer', variables)
     print("initializing Terraform")
-    # AKSTerraform.init()
-    # AKSTerraform.plan()
-    # AKSTerraform.apply()
+    #AKSTerraform.init()
+    #AKSTerraform.plan()
+    #AKSTerraform.apply()
     return
 
 if __name__ == "__main__":
