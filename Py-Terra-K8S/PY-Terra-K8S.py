@@ -1,6 +1,3 @@
-import subprocess
-import sys
-
 from AKSTerraform import *
 
 Terraform_Dir = "/Users/michaelwilliams/Documents/GitHub/Py-Terra-K8S/Py-Terra-K8S/Terraform"
@@ -28,50 +25,6 @@ tf_aks_variables = {
 }
 
 
-def tf_command_helper_sys(cmd):
-    """
-    Terraform Command Helper - sends shell scripts to Shell
-    :param cmd:
-    :return:
-    """
-    print(cmd)
-    try:
-        retcode = subprocess.call([cmd], shell=True)
-        if retcode < 0:
-            print(sys.stderr, "Child was terminated by signal", -retcode)
-        else:
-            print(sys.stderr, "Child returned", retcode)
-    except OSError as e:
-        print(sys.stderr, "Execution failed:", e)
-
-
-def tf_command_helper(cmd):
-    """
-    Terraform Command Helper -  sends non-executable
-    shell commands to a command Shell
-    :param cmd:
-    :return:
-    """
-    print(cmd)
-    try:
-        retcode = subprocess.call([cmd], shell=True)
-        if retcode < 0:
-            print(sys.stderr, "Child was terminated by signal", -retcode)
-        else:
-            print(sys.stderr, "Child returned", retcode)
-    except OSError as e:
-        print(sys.stderr, "Execution failed:", e)
-
-
-def test_configure_helm():
-    """
-    Test configuration of helm
-    :return:
-    """
-    helm_config()
-    return
-
-
 def test_create_aks_cluster():
     """
     Test creation of a AKS Cluster
@@ -85,4 +38,3 @@ def test_create_aks_cluster():
 
 if __name__ == "__main__":
     test_create_aks_cluster()
-    # test_configure_helm()
