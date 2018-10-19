@@ -28,7 +28,7 @@ What things you need to install the software and how to install them
 Install python version 3.7
 for mac OSX command line "brew install python3"
 At ubuntu command line "sudo apt-get update"
-                       "sudo apt-get install python3.6"
+                       "sudo apt-get install python3.7"
 
 requirements.txt has python modules needed For version 0.95 python 3.7 requires: azure-mgmt-resource>=1.1.0
 azure-mgmt-storage>=1.0.0 
@@ -45,8 +45,8 @@ AKS_Storage_Account = "ssaopaks00"
 AKS_Storage_Container = "ssaopakscontainer"
 
 tf_aks_variables = {
-    "client_id": "168f8ef0-c532-45f3-af0b-12934bebd639",
-    "client_secret": "okcDpETZgekzT59euC4I52kjuNmD3SR9WR42G07+SVE=",
+    "client_id": "XXX-REDACTED-XXX",
+    "client_secret": "XXX-REDACTED-XXX",
     "agent_count": 4,
     "ssh_public_key": "~/.ssh/id_rsa.pub",
     "dns_prefix": "OpenInno",
@@ -56,7 +56,7 @@ tf_aks_variables = {
     "nsg_name": "OpenInno-nsg",
     "vnet_name": "VNT-Inno-GP-OpenPlatform-AKS",
     "subnet_name": "SUB-Inno-GP-OpenPlatform-AKSAuto-00",
-    "log_workspace_id": "5f5ff417-9c32-4b94-93b1-6d793d067428",
+    "log_workspace_id": "XXX-REDACTED-XXX",
     "admin_user_name": "OpenInnoAdmin",
     "vnet_address": "172.16.0.0/22",
     "subnet_prefix": "172.16.0.0/24",
@@ -84,16 +84,3 @@ License
 This project is licensed under the Apache License - see the LICENSE.md file for details
 
 © 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-
-
