@@ -1,6 +1,7 @@
 from AKSTerraform import *
 
 Terraform_Dir = "/Users/michaelwilliams/Documents/GitHub/Py-Terra-K8S/Py-Terra-K8S/Terraform"
+Addon_Dir = "/Users/michaelwilliams/Documents/GitHub/Py-Terra-K8S/Py-Terra-K8S/Addon"
 AKS_Storage_Account = "ssaopaks00"
 AKS_Storage_Container = "ssaopakscontainer"
 
@@ -16,6 +17,7 @@ tf_aks_variables = {
     "nsg_name": "OpenInno-nsg",
     "vnet_name": "VNT-Inno-GP-OpenPlatform-AKS",
     "subnet_name": "SUB-Inno-GP-OpenPlatform-AKSAuto-00",
+    "log_workspace_id": "5f5ff417-9c32-4b94-93b1-6d793d067428",
     "admin_user_name": "OpenInnoAdmin",
     "vnet_address": "172.16.0.0/22",
     "subnet_prefix": "172.16.0.0/24",
@@ -24,6 +26,16 @@ tf_aks_variables = {
     "dns_svc_ip": "172.16.1.10"
 }
 
+def test_create_addon_cluster():
+    """
+    Test creation of a AKS Cluster
+    :return:
+    """
+    tf_aks_variables = {}
+    print("Creating AKS cluster with Terraform")
+    AKSTerraform(Addon_Dir, AKS_Storage_Account, AKS_Storage_Container, tf_aks_variables)
+    print("Initializing Terraform")
+    return
 
 def test_create_aks_cluster():
     """
@@ -38,3 +50,4 @@ def test_create_aks_cluster():
 
 if __name__ == "__main__":
     test_create_aks_cluster()
+    # test_cluster_addon()
