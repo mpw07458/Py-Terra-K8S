@@ -19,3 +19,27 @@ resource "helmcmd_release" "plain" {
     chart_version = "0.12.0"
     namespace = "kube-system"
 }
+
+resource "helmcmd_release" "plain" {
+    provider = "helmcmd.kubernetes-stable"
+    name = "cert-manager"
+    chart_name = "cert-manager"
+    chart_version = "0.5.0"
+    namespace = "kube-system"
+}
+
+resource "helmcmd_release" "plain" {
+    provider = "helmcmd.kubernetes-stable"
+    name = "prometheus"
+    chart_name = "prometheus"
+    chart_version = "7.3.1"
+    namespace = "kube-system"
+}
+
+resource "helmcmd_release" "plain" {
+    provider = "helmcmd.kubernetes-stable"
+    name = "fluentd"
+    chart_name = "fluentd"
+    chart_version = "1.0.0"
+    namespace = "kube-system"
+}
