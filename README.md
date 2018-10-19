@@ -33,6 +33,10 @@ At ubuntu command line "sudo apt-get update"
 requirements.txt has python modules needed For version 0.95 python 3.7 requires: azure-mgmt-resource>=1.1.0
 azure-mgmt-storage>=1.0.0 
 
+Requires Azure providers for Azure RM, Kubernetes and Helmcmd:
+terraform-provider-azurerm_v1.15.0_x4
+terraform-provider-helmcmd
+
 Requires AKSTerraform package
 
 Usage of AKSTerraform
